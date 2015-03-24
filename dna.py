@@ -30,3 +30,7 @@ for base in string:
         t += 1
         
 print a, c, g, t
+
+#Or a much quicker/more pythonic way of doing it... learning FORTRAN first starting to show...
+#def qt(s):
+#      return s.count("A"), s.count("G"), s.count("C"), s.count("T")
