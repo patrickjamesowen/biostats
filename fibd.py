@@ -9,15 +9,14 @@
 
 def fib(n, m):
     bunnies = [1, 1]
-    newbunnies = []
     for i in range(2, n):
         if i < m:
             bunnies.append(bunnies[i-2] + bunnies[i-1])
-            newbunnies.append(bunnies[i] - bunnies[i-1])
-        else:
-            bunnies.append((bunnies[i-2] + bunnies[i-1])-newbunnies[i-m])
-            newbunnies.append(bunnies[i] - bunnies[i-1])
+        elif i == m or i == m+1:
+            bunnies.append(bunnies[i-2] + bunnies[i-1]-1)
+        else: 
+            bunnies.append((bunnies[i-2] + bunnies[i-1])- bunnies[i - m - 1])
     return bunnies[-1]
-n = 6
-m = 3
+n = 98
+m = 16
 print fib(n, m)
